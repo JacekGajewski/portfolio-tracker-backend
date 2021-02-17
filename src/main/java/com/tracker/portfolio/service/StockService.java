@@ -92,7 +92,7 @@ public class StockService {
         StockDTO stockDTO = null;
         try {
             ResponseEntity<StockDTO> result = restTemplate.exchange(url, HttpMethod.GET, request,
-                    new ParameterizedTypeReference<>() {
+                    new ParameterizedTypeReference<StockDTO>() {
                     });
             if (result.getStatusCode().equals(HttpStatus.OK)) {
                 stockDTO = result.getBody();
