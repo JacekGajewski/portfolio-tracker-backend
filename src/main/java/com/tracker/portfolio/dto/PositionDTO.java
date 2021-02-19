@@ -10,6 +10,8 @@ public class PositionDTO {
 
     private String ticker;
 
+    private String stockExchange;
+
     private int amount;
 
     private SectorEnum sector;

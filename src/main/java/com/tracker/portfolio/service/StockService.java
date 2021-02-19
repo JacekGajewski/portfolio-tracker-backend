@@ -35,8 +35,14 @@ public class StockService {
         return stockRepository.findByTicker(ticker);
     }
 
+    public Stock getStock(String stockExchange, String ticker) {
+        BigDecimal price = getPrice(stockExchange, ticker);
+        return new Stock(ticker, price, stockExchange, LocalDate.now());
+    }
+
     public BigDecimal getPrice(String stockExchange, String ticker) {
         ticker = ticker.toUpperCase();
+        stockExchange = stockExchange.toUpperCase();
         Optional<BigDecimal> priceOptional = getUpdatedStockValue(ticker);
         if (priceOptional.isPresent()) {
             return priceOptional.get();

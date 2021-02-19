@@ -20,14 +20,14 @@ public class PositionService {
         return positionRepository.findById(positionId).orElse(null);
     }
 
-    public Position save(PositionDTO positionDTO) {
-        Optional<Stock> stockOptional = stockService.findByTicker(positionDTO.getTicker());
-
-        if (stockOptional.isPresent()) {
-            Stock stock = stockOptional.get();
-            Position position = new Position(stock, positionDTO.getAmount(), positionDTO.getSector());
-            return positionRepository.save(position);
-        }
-        return null;
-    }
+//    public Position save(PositionDTO positionDTO) {
+//        Optional<Stock> stockOptional = stockService.findByTicker(positionDTO.getTicker());
+//
+//        if (stockOptional.isPresent()) {
+//            Stock stock = stockOptional.get();
+//            Position position = new Position(stock, positionDTO.getAmount(), positionDTO.getSector());
+//            return positionRepository.save(position);
+//        }
+//        return null;
+//    }
 }

@@ -33,12 +33,9 @@ public class PortfolioService {
             Portfolio portfolio = portfolioOptional.get();
 
             Optional<Stock> stockOptional = stockService.findByTicker(positionDTO.getTicker());
-
-            if (stockOptional.isPresent()) {
-                Stock stock = stockOptional.get();
-                Position position = new Position(stock, positionDTO.getAmount(), positionDTO.getSector());
-                portfolio.getPositions().add(position);
-            }
+            Stock stock = stockOptional.orElseGet(() -> stockService.getStock(positionDTO.getStockExchange(), positionDTO.getTicker()));
+            Position position = new Position(stock, positionDTO.getAmount(), positionDTO.getSector(), portfolio);
+            portfolio.getPositions().add(position);
             return portfolioRepository.save(portfolio);
         }
         return null;

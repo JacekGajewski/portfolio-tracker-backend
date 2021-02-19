@@ -20,11 +20,11 @@ public class PositionController {
     Position getPosition(@PathVariable int positionId) {
         return positionService.getPosition(positionId);
     }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Position
-    savePosition(@RequestBody PositionDTO positionDTO) {
-        return positionService.save(positionDTO);
-    }
+//
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Position
+//    savePosition(@RequestBody PositionDTO positionDTO) {
+//        return positionService.save(positionDTO);
+//    }
 }
