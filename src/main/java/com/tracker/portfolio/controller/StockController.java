@@ -25,7 +25,7 @@ public class StockController {
     @GetMapping("price/{stockExchange}/{ticker}")
     public @ResponseBody
     BigDecimal getPrice(@PathVariable String stockExchange, @PathVariable String ticker) {
-        return stockService.getPrice(stockExchange, ticker);
+        return stockService.getStockPrice(stockExchange.toUpperCase(), ticker.toUpperCase());
     }
 
 }

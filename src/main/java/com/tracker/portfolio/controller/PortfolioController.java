@@ -17,7 +17,7 @@ public class PortfolioController {
 
     @GetMapping("/{portfolioId}")
     public @ResponseBody
-    Portfolio getPortfolio(@PathVariable int portfolioId) {
+    Portfolio getPortfolio(@PathVariable long portfolioId) {
         return portfolioService.getPortfolio(portfolioId);
     }
 
@@ -29,10 +29,11 @@ public class PortfolioController {
     }
 
     @PostMapping("/{portfolioId}")
-    @ResponseStatus(HttpStatus.CREATED)
     public Portfolio
     addPositionToPortfolio(@PathVariable long portfolioId, @RequestBody PositionDTO positionDTO) {
         return portfolioService.addPosition(portfolioId, positionDTO);
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.tracker.portfolio.controller;
 
 import com.tracker.portfolio.dto.PositionDTO;
+import com.tracker.portfolio.entity.Portfolio;
 import com.tracker.portfolio.entity.Position;
 import com.tracker.portfolio.service.PositionService;
 import lombok.AllArgsConstructor;
@@ -17,14 +18,14 @@ public class PositionController {
 
     @GetMapping("/{positionId}")
     public @ResponseBody
-    Position getPosition(@PathVariable int positionId) {
+    Position getPosition(@PathVariable long positionId) {
         return positionService.getPosition(positionId);
     }
-//
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Position
-//    savePosition(@RequestBody PositionDTO positionDTO) {
-//        return positionService.save(positionDTO);
-//    }
+
+    @PostMapping("/{positionId}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Portfolio
+    updatePosition(@PathVariable long positionId, @RequestBody PositionDTO positionDTO) {
+        return positionService.updatePositionInPortfolio(positionId, positionDTO);
+    }
 }

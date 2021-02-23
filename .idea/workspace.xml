@@ -3,23 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5d9043-b795-4b08-8715-4913aaea9394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PortfolioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PortfolioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/StockController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/dto/PositionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/dto/PositionDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Portfolio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PortfolioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PortfolioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PositionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/StockRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PositionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/StockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PortfolioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PortfolioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Portfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PositionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/StockController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/dto/PositionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/dto/PositionDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Stock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PortfolioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PortfolioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PositionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/StockRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/StockRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PositionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PositionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService.class" afterDir="false" />
     </list>
@@ -75,6 +81,12 @@
     <configuration name="PortfolioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="portfolio" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tracker.portfolio.PortfolioApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="DB_USERNAME" value="tnt" />
+        <env name="DB_PASSWORD" value="tnt999" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/PortfolioManager" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,6 +117,11 @@
       <workItem from="1613582850201" duration="2828000" />
       <workItem from="1613661597181" duration="5495000" />
       <workItem from="1613677862106" duration="3752000" />
+      <workItem from="1613719032779" duration="4203000" />
+      <workItem from="1613734437679" duration="5230000" />
+      <workItem from="1613751616353" duration="625000" />
+      <workItem from="1614022851484" duration="8000" />
+      <workItem from="1614093616144" duration="4794000" />
     </task>
     <servers />
   </component>
@@ -116,18 +133,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Assign_Data_Sources/67.27.1853.1053@67.27.1853.1053" timestamp="1613404803016" />
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613583390418">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614098395870">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613583390418" />
-    <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1613489460846">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614098395870" />
+    <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1613735302103">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1613489460846" />
-    <state x="745" y="27" width="476" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613409894752">
+    <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1613735302103" />
+    <state x="745" y="27" width="476" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614097378997">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="745" y="27" width="476" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613409894752" />
+    <state x="745" y="27" width="476" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614097378997" />
     <state x="751" y="297" key="#xdebugger.evaluate" timestamp="1613396333491">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -140,62 +157,62 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="305" y="117" width="1482" height="872" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613584301941" />
-    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog" timestamp="1613583194025">
+    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog" timestamp="1614098394047">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613583194025" />
+    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614098394047" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1613213090691">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1613213090691" />
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1613681708029">
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1614098414689">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708029" />
-    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1613681708029">
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414689" />
+    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1614098414688">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708029" />
-    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1613681708028">
+    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414688" />
+    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1614098414688">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708028" />
-    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1613681708029">
+    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414688" />
+    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1614098414689">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708029" />
-    <state width="1807" height="277" key="GridCell.Tab.1.bottom" timestamp="1613681708030">
+    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414689" />
+    <state width="1807" height="277" key="GridCell.Tab.1.bottom" timestamp="1614098414691">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708030" />
-    <state width="1807" height="277" key="GridCell.Tab.1.center" timestamp="1613681708029">
+    <state width="1807" height="277" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414691" />
+    <state width="1807" height="277" key="GridCell.Tab.1.center" timestamp="1614098414690">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708029" />
-    <state width="1807" height="277" key="GridCell.Tab.1.left" timestamp="1613681708029">
+    <state width="1807" height="277" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
+    <state width="1807" height="277" key="GridCell.Tab.1.left" timestamp="1614098414690">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708029" />
-    <state width="1807" height="277" key="GridCell.Tab.1.right" timestamp="1613681708030">
+    <state width="1807" height="277" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
+    <state width="1807" height="277" key="GridCell.Tab.1.right" timestamp="1614098414690">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1613681708030" />
-    <state width="1807" height="344" key="GridCell.Tab.2.bottom" timestamp="1613680381559">
+    <state width="1807" height="277" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
+    <state width="1807" height="344" key="GridCell.Tab.2.bottom" timestamp="1613749648496">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="344" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1613680381559" />
-    <state width="1807" height="344" key="GridCell.Tab.2.center" timestamp="1613680381558">
+    <state width="1807" height="344" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1613749648496" />
+    <state width="1807" height="344" key="GridCell.Tab.2.center" timestamp="1613749648494">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="344" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1613680381558" />
-    <state width="1807" height="344" key="GridCell.Tab.2.left" timestamp="1613680381557">
+    <state width="1807" height="344" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1613749648494" />
+    <state width="1807" height="344" key="GridCell.Tab.2.left" timestamp="1613749648494">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="344" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1613680381557" />
-    <state width="1807" height="344" key="GridCell.Tab.2.right" timestamp="1613680381558">
+    <state width="1807" height="344" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1613749648494" />
+    <state width="1807" height="344" key="GridCell.Tab.2.right" timestamp="1613749648495">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="344" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1613680381558" />
+    <state width="1807" height="344" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1613749648495" />
     <state x="482" y="187" width="1024" height="845" key="SettingsEditor" timestamp="1613585673398">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

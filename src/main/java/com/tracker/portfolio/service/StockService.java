@@ -3,6 +3,7 @@ package com.tracker.portfolio.service;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlSpan;
+import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.dto.StockDTO;
 import com.tracker.portfolio.entity.Stock;
 import com.tracker.portfolio.mapper.StockMapper;
@@ -31,24 +32,30 @@ public class StockService {
     private final StockRepository stockRepository;
     private final StockMapper stockMapper;
 
+    private final String API_KEY = System.getenv("ALPHA_API_KEY");
+
+
     public Optional<Stock> findByTicker(String ticker) {
-        return stockRepository.findByTicker(ticker);
+        return stockRepository.findByTicker(ticker.toUpperCase());
     }
 
-    public Stock getStock(String stockExchange, String ticker) {
-        BigDecimal price = getPrice(stockExchange, ticker);
+    public Stock getStock(PositionDTO positionDTO) {
+        String ticker = positionDTO.getTicker();
+        Optional<Stock> stockOptional = findByTicker(ticker);
+        if (stockOptional.isPresent()) {
+            return stockOptional.get();
+        }
+        String stockExchange = positionDTO.getStockExchange();
+        BigDecimal price = getStockPrice(stockExchange, ticker);
         return new Stock(ticker, price, stockExchange, LocalDate.now());
     }
 
-    public BigDecimal getPrice(String stockExchange, String ticker) {
-        ticker = ticker.toUpperCase();
-        stockExchange = stockExchange.toUpperCase();
+    public BigDecimal getStockPrice(String stockExchange, String ticker) {
         Optional<BigDecimal> priceOptional = getUpdatedStockValue(ticker);
         if (priceOptional.isPresent()) {
             return priceOptional.get();
         } else {
             Stock stock = getStockEntityFromNetwork(stockExchange, ticker);
-            save(stock);
             return stock.getValue();
         }
     }
@@ -110,8 +117,7 @@ public class StockService {
     }
 
     private String getAlphaVantageUrl(String ticker) {
-        String apikey = System.getenv("ALPHA_API_KEY");
-        return "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=" + apikey;
+        return "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=" + API_KEY;
     }
 
     private Stock getStockEntityForWSE(String ticker) {

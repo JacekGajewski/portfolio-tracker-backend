@@ -8,7 +8,9 @@ import com.tracker.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -16,9 +18,8 @@ public class PortfolioService {
 
     private final PortfolioRepository portfolioRepository;
     private final PositionService positionService;
-    private final StockService stockService;
 
-    public Portfolio getPortfolio(int portfolioId) {
+    public Portfolio getPortfolio(long portfolioId) {
         return portfolioRepository.findById(portfolioId).orElse(null);
     }
 
@@ -31,13 +32,15 @@ public class PortfolioService {
 
         if (portfolioOptional.isPresent()) {
             Portfolio portfolio = portfolioOptional.get();
-
-            Optional<Stock> stockOptional = stockService.findByTicker(positionDTO.getTicker());
-            Stock stock = stockOptional.orElseGet(() -> stockService.getStock(positionDTO.getStockExchange(), positionDTO.getTicker()));
-            Position position = new Position(stock, positionDTO.getAmount(), positionDTO.getSector(), portfolio);
-            portfolio.getPositions().add(position);
-            return portfolioRepository.save(portfolio);
+            return addPositionToPortfolio(portfolio, positionDTO);
         }
         return null;
     }
+
+    private Portfolio addPositionToPortfolio(Portfolio portfolio, PositionDTO positionDTO) {
+        positionService.addOrUpdatePosition(portfolio, positionDTO);
+        return portfolioRepository.save(portfolio);
+    }
+
+
 }

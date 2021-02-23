@@ -4,8 +4,8 @@ import com.tracker.portfolio.enums.SectorEnum;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 public class PositionDTO {
 
     private String ticker;
@@ -15,4 +15,12 @@ public class PositionDTO {
     private int amount;
 
     private SectorEnum sector;
+
+    public String getTicker() {
+        return ticker.toUpperCase();
+    }
+
+    public String getStockExchange() {
+        return stockExchange.toUpperCase();
+    }
 }

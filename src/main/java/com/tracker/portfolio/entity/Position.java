@@ -5,6 +5,7 @@ import com.tracker.portfolio.enums.SectorEnum;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -21,6 +22,8 @@ public class Position extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     private SectorEnum sector;
+
+    private BigDecimal value;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
