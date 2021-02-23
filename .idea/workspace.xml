@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5d9043-b795-4b08-8715-4913aaea9394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/system.properties" beforeDir="false" afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +57,12 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="profiler.jvm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PortfolioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="portfolio" />
@@ -61,7 +71,7 @@
       <envs>
         <env name="DB_USERNAME" value="tnt" />
         <env name="DB_PASSWORD" value="tnt999" />
-        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/PortfolioManager" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/Test" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,7 +107,8 @@
       <workItem from="1613734437679" duration="5230000" />
       <workItem from="1613751616353" duration="625000" />
       <workItem from="1614022851484" duration="8000" />
-      <workItem from="1614093616144" duration="5752000" />
+      <workItem from="1614093616144" duration="6407000" />
+      <workItem from="1614103602376" duration="3132000" />
     </task>
     <servers />
   </component>
@@ -109,10 +120,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Assign_Data_Sources/67.27.1853.1053@67.27.1853.1053" timestamp="1613404803016" />
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614098395870">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614106753697">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614098395870" />
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614106753697" />
     <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1613735302103">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -133,46 +144,46 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="305" y="117" width="1482" height="872" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613584301941" />
-    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog" timestamp="1614098394047">
+    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog" timestamp="1614106751743">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614098394047" />
+    <state x="730" y="330" width="515" height="444" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614106751743" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1613213090691">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1613213090691" />
-    <state width="881" height="277" key="GridCell.Tab.0.bottom" timestamp="1614099639745">
+    <state width="1807" height="517" key="GridCell.Tab.0.bottom" timestamp="1614107810184">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639745" />
-    <state width="881" height="277" key="GridCell.Tab.0.center" timestamp="1614099639745">
+    <state width="1807" height="517" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810184" />
+    <state width="1807" height="517" key="GridCell.Tab.0.center" timestamp="1614107810183">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639745" />
-    <state width="881" height="277" key="GridCell.Tab.0.left" timestamp="1614099639745">
+    <state width="1807" height="517" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810183" />
+    <state width="1807" height="517" key="GridCell.Tab.0.left" timestamp="1614107810183">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639745" />
-    <state width="881" height="277" key="GridCell.Tab.0.right" timestamp="1614099639745">
+    <state width="1807" height="517" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810183" />
+    <state width="1807" height="517" key="GridCell.Tab.0.right" timestamp="1614107810184">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639745" />
-    <state width="881" height="277" key="GridCell.Tab.1.bottom" timestamp="1614099639746">
+    <state width="1807" height="517" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810184" />
+    <state width="1807" height="517" key="GridCell.Tab.1.bottom" timestamp="1614107810186">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639746" />
-    <state width="881" height="277" key="GridCell.Tab.1.center" timestamp="1614099639746">
+    <state width="1807" height="517" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810186" />
+    <state width="1807" height="517" key="GridCell.Tab.1.center" timestamp="1614107810185">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639746" />
-    <state width="881" height="277" key="GridCell.Tab.1.left" timestamp="1614099639746">
+    <state width="1807" height="517" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810185" />
+    <state width="1807" height="517" key="GridCell.Tab.1.left" timestamp="1614107810185">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639746" />
-    <state width="881" height="277" key="GridCell.Tab.1.right" timestamp="1614099639746">
+    <state width="1807" height="517" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810185" />
+    <state width="1807" height="517" key="GridCell.Tab.1.right" timestamp="1614107810185">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="277" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614099639746" />
+    <state width="1807" height="517" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614107810185" />
     <state width="1807" height="344" key="GridCell.Tab.2.bottom" timestamp="1613749648496">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -193,10 +204,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1613585673398" />
-    <state x="167" y="125" width="1653" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1613680378332">
+    <state x="167" y="125" width="1653" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1614108013189">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="167" y="125" width="1653" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1613680378332" />
+    <state x="167" y="125" width="1653" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1614108013189" />
     <state x="758" y="472" width="461" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613584248901">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

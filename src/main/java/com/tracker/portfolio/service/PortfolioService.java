@@ -2,15 +2,12 @@ package com.tracker.portfolio.service;
 
 import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.entity.Portfolio;
-import com.tracker.portfolio.entity.Position;
-import com.tracker.portfolio.entity.Stock;
 import com.tracker.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +24,7 @@ public class PortfolioService {
         return portfolioRepository.save(portfolio);
     }
 
+    @Transactional
     public Portfolio addPosition(long portfolioId, PositionDTO positionDTO) {
         Optional<Portfolio> portfolioOptional = portfolioRepository.findById(portfolioId);
 
@@ -37,7 +35,8 @@ public class PortfolioService {
         return null;
     }
 
-    private Portfolio addPositionToPortfolio(Portfolio portfolio, PositionDTO positionDTO) {
+    @Transactional
+    public Portfolio addPositionToPortfolio(Portfolio portfolio, PositionDTO positionDTO) {
         positionService.addOrUpdatePosition(portfolio, positionDTO);
         return portfolioRepository.save(portfolio);
     }
