@@ -3,31 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5d9043-b795-4b08-8715-4913aaea9394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PortfolioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PortfolioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/PositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/controller/StockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/dto/PositionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/dto/PositionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/entity/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PortfolioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PortfolioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/PositionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/repository/StockRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PortfolioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/PositionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tracker/portfolio/service/StockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PortfolioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PortfolioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PositionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/PositionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/controller/StockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/dto/PositionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/dto/PositionDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/entity/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PortfolioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PortfolioRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/PositionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/StockRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/repository/StockRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PortfolioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PositionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/PositionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tracker/portfolio/service/StockService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +96,7 @@
       <workItem from="1613734437679" duration="5230000" />
       <workItem from="1613751616353" duration="625000" />
       <workItem from="1614022851484" duration="8000" />
-      <workItem from="1614093616144" duration="4794000" />
+      <workItem from="1614093616144" duration="5492000" />
     </task>
     <servers />
   </component>
@@ -165,38 +140,38 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1613213090691" />
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1614098414689">
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1614098463171">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414689" />
-    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1614098414688">
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463171" />
+    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1614098463170">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414688" />
-    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1614098414688">
+    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463170" />
+    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1614098463169">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414688" />
-    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1614098414689">
+    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463169" />
+    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1614098463170">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414689" />
-    <state width="1807" height="277" key="GridCell.Tab.1.bottom" timestamp="1614098414691">
+    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463170" />
+    <state width="1807" height="277" key="GridCell.Tab.1.bottom" timestamp="1614098463172">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414691" />
-    <state width="1807" height="277" key="GridCell.Tab.1.center" timestamp="1614098414690">
+    <state width="1807" height="277" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463172" />
+    <state width="1807" height="277" key="GridCell.Tab.1.center" timestamp="1614098463172">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
-    <state width="1807" height="277" key="GridCell.Tab.1.left" timestamp="1614098414690">
+    <state width="1807" height="277" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463172" />
+    <state width="1807" height="277" key="GridCell.Tab.1.left" timestamp="1614098463171">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
-    <state width="1807" height="277" key="GridCell.Tab.1.right" timestamp="1614098414690">
+    <state width="1807" height="277" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463171" />
+    <state width="1807" height="277" key="GridCell.Tab.1.right" timestamp="1614098463172">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098414690" />
+    <state width="1807" height="277" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1614098463172" />
     <state width="1807" height="344" key="GridCell.Tab.2.bottom" timestamp="1613749648496">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
