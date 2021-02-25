@@ -22,4 +22,7 @@ public class Portfolio extends BaseEntity {
             cascade = CascadeType.ALL,
             mappedBy = "portfolio")
     private Set<Position> positions;
+
+    @ManyToOne
+    private User portfolioOwner;
 }

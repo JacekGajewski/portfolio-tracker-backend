@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +16,10 @@ public class PortfolioService {
 
     private final PortfolioRepository portfolioRepository;
     private final PositionService positionService;
+
+    public List<Portfolio> findAll() {
+       return portfolioRepository.findAll();
+    }
 
     public Portfolio getPortfolio(long portfolioId) {
         return portfolioRepository.findById(portfolioId).orElse(null);

@@ -161,4 +161,8 @@ public class StockService {
         stockRepository.save(stock);
     }
 
+    public List<Stock> findAll() {
+        return stockRepository.findAll();
+    }
+
 }
