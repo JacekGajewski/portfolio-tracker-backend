@@ -74,7 +74,6 @@ public class UserService {
         if (getUserEntity(userDTO.getUsername()) != null) {
             throw new NotUniqueUsernameException("Username already exists");
         }
-        authorityService.initAuthorities();
         User user = userMapper.userDtoToUserEntity(userDTO);
         User userSaved = userRepository.save(user);
         authorityService.createAuthority(UserRole.USER, userSaved);

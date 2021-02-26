@@ -4,7 +4,7 @@ import com.tracker.portfolio.dto.PasswordDTO;
 import com.tracker.portfolio.dto.UserDTO;
 import com.tracker.portfolio.dto.UserResponseDTO;
 import com.tracker.portfolio.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +14,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/users")
+@CrossOrigin("*")
+@AllArgsConstructor
 public class UserController {
 
-    private UserService userService;
-
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private final UserService userService;
 
     @GetMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
