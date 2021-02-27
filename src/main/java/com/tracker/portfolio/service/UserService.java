@@ -71,6 +71,7 @@ public class UserService {
         user.setUsername(newUsername);
     }
 
+    @Transactional
     public void createUser(UserDTO userDTO) {
         if (getUserEntity(userDTO.getUsername()) != null) {
             throw new NotUniqueUsernameException("Username already exists");
