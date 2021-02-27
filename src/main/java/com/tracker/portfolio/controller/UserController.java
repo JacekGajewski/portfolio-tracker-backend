@@ -6,7 +6,6 @@ import com.tracker.portfolio.dto.UserResponseDTO;
 import com.tracker.portfolio.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -21,7 +20,6 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<UserResponseDTO> getAllUsers() {
         return userService.getAllUsers();
     }

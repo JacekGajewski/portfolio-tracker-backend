@@ -1,6 +1,5 @@
 package com.tracker.portfolio.enums;
 
-import com.google.common.collect.Sets;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Set;
@@ -8,8 +7,8 @@ import java.util.stream.Collectors;
 
 
 public enum UserRole {
-    USER(Sets.newHashSet()),
-    ADMIN(Sets.newHashSet(UserPermission.values()));
+    USER(UserPermission.getUserPermissionSet()),
+    ADMIN(UserPermission.getAdminPermissionSet());
 
     private final Set<UserPermission> permissions;
 

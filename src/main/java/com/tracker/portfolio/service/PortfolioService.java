@@ -2,11 +2,14 @@ package com.tracker.portfolio.service;
 
 import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.entity.Portfolio;
+import com.tracker.portfolio.entity.User;
 import com.tracker.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +30,11 @@ public class PortfolioService {
 
     public Portfolio save(Portfolio portfolio) {
         return portfolioRepository.save(portfolio);
+    }
+
+    public void createPortfolio(User user) {
+        Portfolio portfolio = new Portfolio("New portfolio", BigDecimal.ZERO, new HashSet<>(), user);
+        portfolioRepository.save(portfolio);
     }
 
     @Transactional

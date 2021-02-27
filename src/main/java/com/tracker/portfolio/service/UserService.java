@@ -24,6 +24,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final AuthorityService authorityService;
+    private final PortfolioService portfolioService;
 
     public User getUserEntity(long userId) {
         return userRepository.findById(userId).orElseThrow(()
@@ -77,6 +78,7 @@ public class UserService {
         User user = userMapper.userDtoToUserEntity(userDTO);
         User userSaved = userRepository.save(user);
         authorityService.createAuthority(UserRole.USER, userSaved);
+        portfolioService.createPortfolio(userSaved);
     }
 
     public void deleteUser(long userId) {
