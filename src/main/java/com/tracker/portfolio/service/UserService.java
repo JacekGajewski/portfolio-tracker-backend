@@ -8,6 +8,7 @@ import com.tracker.portfolio.enums.UserRole;
 import com.tracker.portfolio.exception.BadPasswordException;
 import com.tracker.portfolio.exception.NotUniqueUsernameException;
 import com.tracker.portfolio.exception.UserNotFoundException;
+import com.tracker.portfolio.mapper.UserMapper;
 import com.tracker.portfolio.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -79,7 +80,7 @@ public class UserService {
         User user = userMapper.userDtoToUserEntity(userDTO);
         User userSaved = userRepository.save(user);
         authorityService.createAuthority(UserRole.USER, userSaved);
-        portfolioService.createPortfolio(userSaved);
+        portfolioService.createEmptyPortfolio(userSaved);
     }
 
     public void deleteUser(long userId) {

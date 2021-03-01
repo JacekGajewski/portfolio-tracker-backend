@@ -1,16 +1,20 @@
 package com.tracker.portfolio.dto;
 
-import com.tracker.portfolio.enums.SectorEnum;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import java.math.BigDecimal;
+import java.util.Set;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PortfolioDTO {
 
-    private String ticker;
+    private long portfolioId;
 
-    private int amount;
+    private String name;
 
-    private SectorEnum sector;
+    private BigDecimal value;
+
+    private Set<PositionDTO> positions;
 }

@@ -17,7 +17,7 @@ public class StockMapper {
         TimeSeriesDTO value = next.getValue();
         String close = value.getClose();
         return new Stock(
-                stockDTO.getMetaDataDTO().getSymbol(),
+                stockDTO.getStockMetaDataDTO().getSymbol(),
                 new BigDecimal(close),
                 "USA",
                 LocalDate.parse(next.getKey())

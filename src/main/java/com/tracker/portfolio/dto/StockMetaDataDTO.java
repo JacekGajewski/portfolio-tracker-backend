@@ -6,10 +6,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MetaDataDTO {
+public class StockMetaDataDTO {
 
     @JsonProperty("1. Information")
-    private String infoormation;
+    private String information;
 
     @JsonProperty("2. Symbol")
     private String symbol;

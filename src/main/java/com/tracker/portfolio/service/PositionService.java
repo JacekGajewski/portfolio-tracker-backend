@@ -1,11 +1,14 @@
 package com.tracker.portfolio.service;
 
+import com.tracker.portfolio.auth.ApplicationUser;
 import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.entity.Portfolio;
 import com.tracker.portfolio.entity.Position;
 import com.tracker.portfolio.entity.Stock;
+import com.tracker.portfolio.exception.ForbiddenException;
 import com.tracker.portfolio.repository.PositionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,13 +23,20 @@ public class PositionService {
     private final StockService stockService;
 
     public Position getPosition(long positionId) {
-        return positionRepository.findById(positionId).orElse(null);
+        Optional<Position> positionOptional = positionRepository.findById(positionId);
+        if (positionOptional.isPresent()){
+            Position position = positionOptional.get();
+            checkPositionOwner(position);
+            return position;
+        }
+        return new Position();
     }
 
     public Portfolio updatePositionInPortfolio(long positionId, PositionDTO positionDTO) {
         Optional<Position> positionOptional = positionRepository.findById(positionId);
         if (positionOptional.isPresent()) {
             Position position = positionOptional.get();
+            checkPositionOwner(position);
 
             int newAmount = positionDTO.getAmount();
             if (newAmount == 0) {
@@ -79,5 +89,14 @@ public class PositionService {
                 positionDTO.getSector(),
                 stock.getValue().multiply(BigDecimal.valueOf(positionDTO.getAmount())),
                 portfolio);
+    }
+
+
+    private void checkPositionOwner(Position position) {
+        ApplicationUser applicationUser = (ApplicationUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long user_id = applicationUser.getUser_id();
+        if(position.getPortfolio().getPortfolioOwner().getId() == user_id) {
+            throw new ForbiddenException("User not authorized");
+        }
     }
 }

@@ -59,6 +59,19 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(apiException, wrongPassword);
     }
 
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<Object> handleForbiddenException(ForbiddenException e) {
+
+        HttpStatus forbidden = HttpStatus.FORBIDDEN;
+
+        ApiException apiException = new ApiException(
+                e.getMessage(),
+                forbidden,
+                ZonedDateTime.now(ZoneId.of("Z"))
+        );
+        return new ResponseEntity<>(apiException, forbidden);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException e, HttpHeaders headers,
                                                                   HttpStatus status, WebRequest request) {

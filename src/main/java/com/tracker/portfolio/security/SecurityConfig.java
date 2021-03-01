@@ -1,6 +1,7 @@
 package com.tracker.portfolio.security;
 
 import com.tracker.portfolio.auth.ApplicationUserService;
+import com.tracker.portfolio.enums.UserRole;
 import com.tracker.portfolio.jwt.JwtConfig;
 import com.tracker.portfolio.jwt.JwtTokenVerifier;
 import com.tracker.portfolio.jwt.JwtUsernamePasswordAuthFilter;
@@ -16,6 +17,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -26,11 +28,12 @@ import javax.crypto.SecretKey;
 import java.util.Arrays;
 
 import static com.tracker.portfolio.enums.UserPermission.STOCK_READ;
+import static com.tracker.portfolio.enums.UserRole.ADMIN;
+import static com.tracker.portfolio.enums.UserRole.USER;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-@EnableGlobalMethodSecurity(prePostEnabled = true) //For REST method annotations
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
@@ -51,18 +54,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "index", "/css/*", "/js/*",  "/login")
                     .permitAll()
+                .antMatchers("/portfolio/**")
+                    .hasAnyRole(ADMIN.name(), USER.name())
                 .antMatchers(HttpMethod.POST, "/users")
                     .permitAll()
                 .antMatchers("/users")
-                    .hasRole("ADMIN")
-                .antMatchers("/portfolio/**")
-                    .hasAnyRole("ADMIN, USER")
+                    .hasRole(ADMIN.name())
                 .antMatchers("/position/**")
-                    .hasAnyRole("ADMIN, USER")
+                    .hasAnyRole(ADMIN.name(), USER.name())
                 .antMatchers("/stocks/price/**")
-                    .hasAnyRole("ADMIN, USER")
+                    .hasAnyRole(ADMIN.name(), USER.name())
                 .antMatchers("/stocks/**")
-                    .hasRole("ADMIN")
+                    .hasRole(ADMIN.name())
                 .anyRequest()
                     .authenticated();
     }

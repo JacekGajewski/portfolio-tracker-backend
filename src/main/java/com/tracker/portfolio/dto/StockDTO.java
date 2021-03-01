@@ -11,7 +11,7 @@ import java.util.Map;
 public class StockDTO {
 
     @JsonProperty("Meta Data")
-    private MetaDataDTO metaDataDTO;
+    private StockMetaDataDTO stockMetaDataDTO;
 
     @JsonProperty("Time Series (Daily)")
     Map<String, TimeSeriesDTO> sth;
