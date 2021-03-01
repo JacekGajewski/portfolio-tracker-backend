@@ -1,13 +1,16 @@
 package com.tracker.portfolio.service;
 
 import com.tracker.portfolio.auth.ApplicationUser;
+import com.tracker.portfolio.dto.PortfolioDTO;
 import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.entity.Portfolio;
 import com.tracker.portfolio.entity.Position;
 import com.tracker.portfolio.entity.Stock;
 import com.tracker.portfolio.exception.ForbiddenException;
+import com.tracker.portfolio.mapper.PortfolioMapper;
 import com.tracker.portfolio.repository.PositionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +24,7 @@ public class PositionService {
 
     private final PositionRepository positionRepository;
     private final StockService stockService;
+    private final PortfolioMapper portfolioMapper;
 
     public Position getPosition(long positionId) {
         Optional<Position> positionOptional = positionRepository.findById(positionId);
@@ -32,7 +36,7 @@ public class PositionService {
         return new Position();
     }
 
-    public Portfolio updatePositionInPortfolio(long positionId, PositionDTO positionDTO) {
+    public PortfolioDTO updatePositionInPortfolio(long positionId, PositionDTO positionDTO) {
         Optional<Position> positionOptional = positionRepository.findById(positionId);
         if (positionOptional.isPresent()) {
             Position position = positionOptional.get();
@@ -44,9 +48,10 @@ public class PositionService {
             } else {
                 updatePositionAmount(position, newAmount);
             }
-            return position.getPortfolio();
+            Portfolio portfolio = position.getPortfolio();
+            return portfolioMapper.portfolioEntityToDTO(portfolio);
         }
-        return null;
+        return new PortfolioDTO();
     }
 
     private void deletePositionFromPortfolio(Position position){
@@ -93,9 +98,9 @@ public class PositionService {
 
 
     private void checkPositionOwner(Position position) {
-        ApplicationUser applicationUser = (ApplicationUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long user_id = applicationUser.getUser_id();
-        if(position.getPortfolio().getPortfolioOwner().getId() == user_id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        long user_id = Long.valueOf((Integer) authentication.getCredentials());
+        if(position.getPortfolio().getPortfolioOwner().getId() != user_id) {
             throw new ForbiddenException("User not authorized");
         }
     }

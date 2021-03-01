@@ -62,7 +62,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ForbiddenException.class)
     public ResponseEntity<Object> handleForbiddenException(ForbiddenException e) {
 
-        HttpStatus forbidden = HttpStatus.FORBIDDEN;
+        HttpStatus forbidden = HttpStatus.SWITCHING_PROTOCOLS;
 
         ApiException apiException = new ApiException(
                 e.getMessage(),

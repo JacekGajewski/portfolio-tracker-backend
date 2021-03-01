@@ -1,5 +1,6 @@
 package com.tracker.portfolio.controller;
 
+import com.tracker.portfolio.dto.PortfolioDTO;
 import com.tracker.portfolio.dto.PositionDTO;
 import com.tracker.portfolio.entity.Portfolio;
 import com.tracker.portfolio.entity.Position;
@@ -24,7 +25,7 @@ public class PositionController {
 
     @PostMapping("/{positionId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Portfolio
+    public PortfolioDTO
     updatePosition(@PathVariable long positionId, @RequestBody PositionDTO positionDTO) {
         return positionService.updatePositionInPortfolio(positionId, positionDTO);
     }

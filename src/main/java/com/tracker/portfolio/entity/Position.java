@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class Position extends BaseEntity{
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Stock stock;
 
     private int amount;

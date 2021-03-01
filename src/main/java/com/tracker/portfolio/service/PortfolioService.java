@@ -10,6 +10,7 @@ import com.tracker.portfolio.exception.NotUniqueUsernameException;
 import com.tracker.portfolio.mapper.PortfolioMapper;
 import com.tracker.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -76,9 +77,9 @@ public class PortfolioService {
     }
 
     private void checkPortfolioOwner(Portfolio portfolio) {
-        ApplicationUser applicationUser = (ApplicationUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long user_id = applicationUser.getUser_id();
-        if(portfolio.getPortfolioOwner().getId() == user_id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        long user_id = Long.valueOf((Integer) authentication.getCredentials());
+        if(portfolio.getPortfolioOwner().getId() != user_id) {
             throw new ForbiddenException("User not authorized");
         }
     }

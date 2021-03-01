@@ -22,6 +22,7 @@ public class PortfolioMapper {
                             position.getStock().getTicker(),
                             position.getStock().getStockExchange(),
                             position.getAmount(),
+                            position.getStock().getValue(),
                             position.getValue(),
                             position.getSector()
                     )

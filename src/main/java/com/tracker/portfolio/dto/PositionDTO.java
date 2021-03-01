@@ -20,6 +20,8 @@ public class PositionDTO {
 
     private int amount;
 
+    private BigDecimal stockPrice;
+
     private BigDecimal value;
 
     private SectorEnum sector;
