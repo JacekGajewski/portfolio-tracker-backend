@@ -103,22 +103,26 @@ public class CommandLineStartup implements CommandLineRunner {
 
     private List<Stock> getListOfAdminStocks() {
         return Arrays.asList(
-                new Stock("PGE", new BigDecimal("6.75"), "WSE", LocalDate.now()),
-                new Stock("TAU", new BigDecimal("6.75"), "WSE", LocalDate.now()),
-                new Stock("APPL", new BigDecimal("123.54"), "NASDAQ", LocalDate.now())
+                new Stock("PGE", new BigDecimal("6.75"), "WSE", getLocalDate()),
+                new Stock("TAU", new BigDecimal("6.75"), "WSE", getLocalDate()),
+                new Stock("APPL", new BigDecimal("123.54"), "NASDAQ", getLocalDate())
         );
     }
 
     private List<Stock> getListOfUserStocks() {
         return Arrays.asList(
-                new Stock("PZU", new BigDecimal("6.75"), "WSE", LocalDate.now()),
-                new Stock("PKO", new BigDecimal("6.75"), "WSE", LocalDate.now()),
-                new Stock("AMZN", new BigDecimal("3893.65"), "NASDAQ", LocalDate.now()),
-                new Stock("TSLA", new BigDecimal("750.76"), "NASDAQ", LocalDate.now())
+                new Stock("PZU", new BigDecimal("6.75"), "WSE", getLocalDate()),
+                new Stock("PKO", new BigDecimal("6.75"), "WSE", getLocalDate()),
+                new Stock("AMZN", new BigDecimal("3893.65"), "NASDAQ", getLocalDate()),
+                new Stock("TSLA", new BigDecimal("750.76"), "NASDAQ", getLocalDate())
         );
     }
 
     private static int getRandomAmount() {
         return  new Random().nextInt(100) + 1;
+    }
+
+    private LocalDate getLocalDate() {
+        return LocalDate.of(2021, 1, 1);
     }
 }
