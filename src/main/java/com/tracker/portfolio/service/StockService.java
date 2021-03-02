@@ -34,43 +34,18 @@ public class StockService {
 
     private final String API_KEY = System.getenv("ALPHA_API_KEY");
 
-
-    public Optional<Stock> findByTicker(String ticker) {
+    public Optional<Stock> findByTickerInDB(String ticker) {
         return stockRepository.findByTicker(ticker.toUpperCase());
     }
 
     public Stock getStock(PositionDTO positionDTO) {
         String ticker = positionDTO.getTicker();
-        Optional<Stock> stockOptional = findByTicker(ticker);
-        if (stockOptional.isPresent()) {
-            return stockOptional.get();
-        }
-        String stockExchange = positionDTO.getStockExchange();
-        BigDecimal price = getStockPrice(stockExchange, ticker);
-        return new Stock(ticker, price, stockExchange, LocalDate.now());
-    }
-
-    public BigDecimal getStockPrice(String stockExchange, String ticker) {
-        Optional<BigDecimal> priceOptional = getUpdatedStockValue(ticker);
-        if (priceOptional.isPresent()) {
-            return priceOptional.get();
-        } else {
-            Stock stock = getStockEntityFromNetwork(stockExchange, ticker);
-            return stock.getValue();
-        }
-    }
-
-    private Optional<BigDecimal> getUpdatedStockValue(String ticker) {
-        Optional<Stock> stockOptional = findByTicker(ticker);
+        Optional<Stock> stockOptional = findByTickerInDB(ticker);
         if (stockOptional.isPresent()) {
             Stock stock = stockOptional.get();
-            if (dataIsOld(stock)) {
-                updateStockEntity(stock);
-            }
-            return Optional.of(stock.getValue());
-        } else {
-            return Optional.empty();
+            return dataIsOld(stock) ? updateStockEntity(stock) : stock;
         }
+        return getStockEntityFromNetwork(positionDTO.getTicker(), positionDTO.getStockExchange());
     }
 
     private boolean dataIsOld(Stock stock) {
@@ -84,40 +59,19 @@ public class StockService {
         return !dayOfWeekStock.equals(DayOfWeek.FRIDAY) || !dayOfWeekNow.equals(DayOfWeek.MONDAY);
     }
 
-    private void updateStockEntity(Stock stock) {
-        Stock stockNew = getStockEntityFromNetwork(stock.getStockExchange(), stock.getTicker());
+    private Stock updateStockEntity(Stock stock) {
+        Stock stockNew = getStockEntityFromNetwork(stock.getTicker(), stock.getStockExchange());
         stock.setValue(stockNew.getValue());
         stock.setDate(stockNew.getDate());
-        stockRepository.save(stock);
+        return save(stock);
     }
 
-    private Stock getStockEntityForUSA(String ticker) {
-        StockDTO stockDTO = getStockDTOFromAlphaVantage(ticker);
-        return stockMapper.getStockEntityUSA(stockDTO);
-    }
-
-    public StockDTO getStockDTOFromAlphaVantage(String ticker) {
-        String url = getAlphaVantageUrl(ticker);
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<String> request = new HttpEntity<>(headers);
-        StockDTO stockDTO = null;
-        try {
-            ResponseEntity<StockDTO> result = restTemplate.exchange(url, HttpMethod.GET, request,
-                    new ParameterizedTypeReference<StockDTO>() {
-                    });
-            if (result.getStatusCode().equals(HttpStatus.OK)) {
-                stockDTO = result.getBody();
-            } else {
-            }
-        } catch (HttpClientErrorException e) {
+    private Stock getStockEntityFromNetwork(String ticker, String stockExchange) {
+        if ("WSE".equals(stockExchange)) {
+            return getStockEntityForWSE(ticker);
+        } else {
+            return getStockEntityForUSA(ticker);
         }
-        return stockDTO;
-    }
-
-    private String getAlphaVantageUrl(String ticker) {
-        return "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=" + API_KEY;
     }
 
     private Stock getStockEntityForWSE(String ticker) {
@@ -125,7 +79,7 @@ public class StockService {
         return new Stock(ticker, new BigDecimal(priceWSE), "WSE", LocalDate.now());
     }
 
-    public String getPriceWSE(String ticker) {
+    private String getPriceWSE(String ticker) {
         String url = "https://www.biznesradar.pl/notowania/" + ticker;
         WebClient webClient = getStaticWebClient();
         HtmlPage page = null;
@@ -149,16 +103,37 @@ public class StockService {
         return webClient;
     }
 
-    private Stock getStockEntityFromNetwork(String stockExchange, String ticker) {
-        if ("WSE".equals(stockExchange)) {
-            return getStockEntityForWSE(ticker);
-        } else {
-            return getStockEntityForUSA(ticker);
-        }
+    private Stock getStockEntityForUSA(String ticker) {
+        StockDTO stockDTO = getStockDTOFromAlphaVantage(ticker);
+        return stockMapper.getStockEntityUSA(stockDTO);
     }
 
-    private void save(Stock stock) {
-        stockRepository.save(stock);
+    private StockDTO getStockDTOFromAlphaVantage(String ticker) {
+        String url = getAlphaVantageUrl(ticker);
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<String> request = new HttpEntity<>(headers);
+        StockDTO stockDTO = null;
+        try {
+            ResponseEntity<StockDTO> result = restTemplate.exchange(url, HttpMethod.GET, request,
+                    new ParameterizedTypeReference<StockDTO>() {
+                    });
+            if (result.getStatusCode().equals(HttpStatus.OK)) {
+                stockDTO = result.getBody();
+            } else {
+            }
+        } catch (HttpClientErrorException e) {
+        }
+        return stockDTO;
+    }
+
+    private String getAlphaVantageUrl(String ticker) {
+        return "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=" + API_KEY;
+    }
+
+    private Stock save(Stock stock) {
+         return stockRepository.save(stock);
     }
 
     public List<Stock> findAll() {
