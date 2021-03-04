@@ -16,20 +16,19 @@ public class PortfolioController {
     private final PortfolioService portfolioService;
 
     @GetMapping("/{portfolioId}")
-    public @ResponseBody
-    Portfolio getPortfolio(@PathVariable long portfolioId) {
+    @ResponseBody
+    public Portfolio getPortfolio(@PathVariable long portfolioId) {
         return portfolioService.getPortfolio(portfolioId);
     }
 
     @GetMapping("/user/{userId}")
-    public @ResponseBody
-    PortfolioDTO getUserPortfolio(@PathVariable long userId) {
+    @ResponseBody
+    public PortfolioDTO getUserPortfolio(@PathVariable long userId) {
         return portfolioService.getUserPortfolio(userId);
     }
 
     @PostMapping("/{portfolioId}")
-    public PortfolioDTO
-    addPositionToPortfolio(@PathVariable long portfolioId, @RequestBody PositionDTO positionDTO) {
+    public PortfolioDTO addPositionToPortfolio(@PathVariable long portfolioId, @RequestBody PositionDTO positionDTO) {
         return portfolioService.addPosition(portfolioId, positionDTO);
     }
 }

@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -28,8 +27,8 @@ public class UserService {
     private final PortfolioService portfolioService;
 
     public User getUserEntity(long userId) {
-        return userRepository.findById(userId).orElseThrow(()
-                -> new UserNotFoundException("User: " + userId + " not found"));
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"));
     }
 
     public User getUserEntity(String username) {
@@ -42,8 +41,9 @@ public class UserService {
     }
 
     public UserResponseDTO getUser(String username) {
-        User user = userRepository.findUserByUsername(username).orElse(null);
-        return userMapper.userToUserResponseDto(user);
+        return userRepository.findUserByUsername(username)
+                .map(userMapper::userToUserResponseDto)
+                .orElseThrow();
     }
 
     public List<UserResponseDTO> getAllUsers() {
@@ -91,12 +91,4 @@ public class UserService {
         userRepository.save(user);
     }
 
-    //    private User addAuthorityToUser(User user, UserRole userRole){
-//
-//        Authority authority = authorityService.createAuthority(userRole);
-//        Set<Authority> authorities = new HashSet<>();
-//        authorities.add(authority);
-//        user.setAuthorities(authorities);
-//        return user;
-//    }
 }

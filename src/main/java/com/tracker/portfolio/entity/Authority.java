@@ -1,6 +1,5 @@
 package com.tracker.portfolio.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tracker.portfolio.enums.UserRole;
 import lombok.Getter;
@@ -14,7 +13,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class Authority extends BaseEntity{
+public class Authority extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
