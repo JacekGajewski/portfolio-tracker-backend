@@ -3,8 +3,6 @@ package com.tracker.portfolio.dto;
 import com.tracker.portfolio.enums.SectorEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 

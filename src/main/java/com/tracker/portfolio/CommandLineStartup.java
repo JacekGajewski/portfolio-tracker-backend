@@ -6,10 +6,10 @@ import com.tracker.portfolio.service.AuthorityService;
 import com.tracker.portfolio.service.PortfolioService;
 import com.tracker.portfolio.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 import static com.tracker.portfolio.enums.UserRole.ADMIN;
 import static com.tracker.portfolio.enums.UserRole.USER;
 
-
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class CommandLineStartup implements CommandLineRunner {
@@ -28,22 +28,23 @@ public class CommandLineStartup implements CommandLineRunner {
     private final UserService userService;
     private final AuthorityService authorityService;
 
-    private static final Logger LOG = LoggerFactory.getLogger(CommandLineStartup.class);
-
     @Override
+    @Transactional
     public void run(String... args) {
         if (authorityService.findAll().isEmpty()) {
-            LOG.info("Authority data is being initialized");
+            log.info("Adding authorities to the system...");
             authorityService.save(new Authority(ADMIN));
             authorityService.save(new Authority(USER));
         }
+        // TODO resolve to save the data
         if (portfolioService.findAll().isEmpty()) {
-            LOG.info("Sample data is being initialized");
-            createAdminWithPortfolio();
-            createUserWithPortfolio();
+            log.info("Sample data is being initialized");
+            // createAdminWithPortfolio();
+            // createUserWithPortfolio();
         }
     }
 
+    // TODO move to dev data
     private void createAdminWithPortfolio() {
         Portfolio portfolio = createAdminPortfolio();
         User admin = new User("admin", "admin12", null, Collections.singletonList(portfolio));
@@ -54,6 +55,7 @@ public class CommandLineStartup implements CommandLineRunner {
         userService.save(admin);
     }
 
+    // TODO move to dev data
     private void createUserWithPortfolio() {
         Portfolio portfolio = createUserPortfolio();
         User user = new User("linda", "linda12", null, Collections.singletonList(portfolio));

@@ -20,7 +20,7 @@ public class User extends BaseEntity{
 
     private String username;
 
-    private String  password;
+    private String password;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "id.user", cascade = CascadeType.ALL)
     @JsonIgnore
@@ -36,11 +36,6 @@ public class User extends BaseEntity{
     }
 
     public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(int id, String username, String password) {
         this.username = username;
         this.password = password;
     }

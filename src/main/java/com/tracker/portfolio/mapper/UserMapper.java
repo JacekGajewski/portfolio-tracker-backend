@@ -3,13 +3,18 @@ package com.tracker.portfolio.mapper;
 import com.tracker.portfolio.dto.UserDTO;
 import com.tracker.portfolio.dto.UserResponseDTO;
 import com.tracker.portfolio.entity.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class UserMapper {
+
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public List<UserResponseDTO> usersListToUsersResponseDtoList(List<User> users) {
         if (users == null) return null;
@@ -29,9 +34,8 @@ public class UserMapper {
 
     public User userDtoToUserEntity(UserDTO userDTO) {
         return new User(
-                userDTO.getUserId(),
                 userDTO.getUsername(),
-                userDTO.getPassword()
+                bCryptPasswordEncoder.encode(userDTO.getPassword())
         );
     }
 }
