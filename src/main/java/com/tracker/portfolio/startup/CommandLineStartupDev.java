@@ -1,4 +1,4 @@
-package com.tracker.portfolio;
+package com.tracker.portfolio.startup;
 
 import com.tracker.portfolio.entity.*;
 import com.tracker.portfolio.enums.SectorEnum;
@@ -8,6 +8,7 @@ import com.tracker.portfolio.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +23,8 @@ import static com.tracker.portfolio.enums.UserRole.USER;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class CommandLineStartup implements CommandLineRunner {
+@Profile("dev")
+public class CommandLineStartupDev implements CommandLineRunner {
 
     private final PortfolioService portfolioService;
     private final UserService userService;
@@ -31,20 +33,14 @@ public class CommandLineStartup implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) {
-        if (authorityService.findAll().isEmpty()) {
-            log.info("Adding authorities to the system...");
-            authorityService.save(new Authority(ADMIN));
-            authorityService.save(new Authority(USER));
-        }
-        // TODO resolve to save the data
+        authorityService.initAuthorities();
         if (portfolioService.findAll().isEmpty()) {
+            createAdminWithPortfolio();
+            createUserWithPortfolio();
             log.info("Sample data is being initialized");
-            // createAdminWithPortfolio();
-            // createUserWithPortfolio();
         }
     }
 
-    // TODO move to dev data
     private void createAdminWithPortfolio() {
         Portfolio portfolio = createAdminPortfolio();
         User admin = new User("admin", "admin12", null, Collections.singletonList(portfolio));
@@ -55,7 +51,6 @@ public class CommandLineStartup implements CommandLineRunner {
         userService.save(admin);
     }
 
-    // TODO move to dev data
     private void createUserWithPortfolio() {
         Portfolio portfolio = createUserPortfolio();
         User user = new User("linda", "linda12", null, Collections.singletonList(portfolio));
@@ -121,7 +116,7 @@ public class CommandLineStartup implements CommandLineRunner {
     }
 
     private static int getRandomAmount() {
-        return  new Random().nextInt(100) + 1;
+        return new Random().nextInt(100) + 1;
     }
 
     private LocalDate getLocalDate() {

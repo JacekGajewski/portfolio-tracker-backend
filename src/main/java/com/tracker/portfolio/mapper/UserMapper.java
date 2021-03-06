@@ -5,6 +5,7 @@ import com.tracker.portfolio.dto.UserResponseDTO;
 import com.tracker.portfolio.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserMapper {
 
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     public List<UserResponseDTO> usersListToUsersResponseDtoList(List<User> users) {
         if (users == null) return null;
@@ -35,7 +36,7 @@ public class UserMapper {
     public User userDtoToUserEntity(UserDTO userDTO) {
         return new User(
                 userDTO.getUsername(),
-                bCryptPasswordEncoder.encode(userDTO.getPassword())
+                passwordEncoder.encode(userDTO.getPassword())
         );
     }
 }

@@ -7,6 +7,7 @@ import com.tracker.portfolio.entity.UsersAuthorities;
 import com.tracker.portfolio.enums.UserRole;
 import com.tracker.portfolio.repository.AuthorityRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +16,7 @@ import java.util.List;
 import static com.tracker.portfolio.enums.UserRole.ADMIN;
 import static com.tracker.portfolio.enums.UserRole.USER;
 
-
+@Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -43,19 +44,16 @@ public class AuthorityService {
         usersAuthoritiesService.save(usersAuthorities);
     }
 
-    public void deleteAuthorities(int userId) {
-
-    }
-
     public void save(Authority authority) {
         authorityRepository.save(authority);
     }
 
     public void initAuthorities() {
-        if (authorityRepository.getByUserRole(USER) != null) {
-            return;
+        if (!findAll().isEmpty()) {
+            authorityRepository.save(new Authority(USER));
+            authorityRepository.save(new Authority(ADMIN));
+            log.info("Adding authorities to the system...");
         }
-        authorityRepository.save(new Authority(USER));
-        authorityRepository.save(new Authority(ADMIN));
+
     }
 }
